@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+     .classe{
+       background-color: rgb(245, 245, 238);
+       height: 20px;
+       border-radius: 5px;
+     }
+     .classe1{
+        background-color: yellow;
+        height: 20px;
+        border-radius: 5px;
+     }
+     .classe2{
+        background-color: red;
+        height: 20px;
+        border-radius: 5px;
+     }
+     .classe3{
+        background-color: green;
+        height: 20px;
+        border-radius: 5px;
+     }
+     </style>
+
+    <script>
+        function acionaCampo(){
+            document.getElementById('campo').classNeme = "classe1"
+        }
+
+        function validaCampos(){
+            var valorCampo = document.getElementById('campo').classNeme = "classe2"
+        } else {
+             document.getElementById('campo').classNeme = "classe3"
+        }
+    </script>
+
+</head>
+<body>
+    <input class="classe" id="campo" type="text" pnfocus="acionaCampo()"
+    onblur ="validaCampos()" placeholder="Dogite aqui"/>
+</body>
+</html>

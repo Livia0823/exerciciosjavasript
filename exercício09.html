@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Nome para Maiúsculas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            color: #333;
+        }
+        #resultado {
+            margin-top: 20px;
+            font-size: 24px;
+            color: #0066cc;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Conversor de Nome</h1>
+
+    <label for="nomeInput">Digite seu nome em letras minúsculas:</label>
+    <input type="text" id="nomeInput" placeholder="Ex: joão silva">
+    <button onclick="converterNome()">Converter</button>
+
+    <div id="resultado"></div>
+
+    <script>
+        function converterParaMaiusculas(nome) {
+            /**
+             * Converte uma string para letras maiúsculas.
+             * @param {string} nome - O nome em letras minúsculas.
+             * @returns {string} O nome em letras maiúsculas.
+             */
+            return nome.toUpperCase();
+        }
+
+        function converterNome() {
+            // Pega o valor do input do HTML
+            const nomeDigitado = document.getElementById("nomeInput").value;
+
+            // Seleciona a div onde o resultado será exibido
+            const resultadoDiv = document.getElementById("resultado");
+
+            // Verifica se o campo não está vazio
+            if (nomeDigitado.trim() === '') {
+                resultadoDiv.innerHTML = '<span style="color: red;">Por favor, digite um nome.</span>';
+                return;
+            }
+
+            // Chama a função para converter o nome
+            const nomeMaiusculo = converterParaMaiusculas(nomeDigitado);
+
+            // Exibe o resultado na div em HTML
+            resultadoDiv.innerHTML = `<p>Seu nome em maiúsculas é: <br> ${nomeMaiusculo}</p>`;
+        }
+    </script>
+
+</body>
+</html>

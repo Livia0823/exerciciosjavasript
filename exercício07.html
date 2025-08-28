@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de Par ou Ímpar</title>
+</head>
+<body>
+
+    <h1>Verificador de Par ou Ímpar</h1>
+
+    <label for="numeroInput">Digite um número inteiro:</label>
+    <input type="number" id="numeroInput">
+    <button onclick="exibirResultado()">Verificar</button>
+
+    <div id="resultado"></div>
+
+    <script>
+        function verificarParOuImpar(numero) {
+            /**
+             * Verifica se um número é par ou ímpar e retorna o resultado em HTML.
+             * @param {number} numero - O número inteiro a ser verificado.
+             * @returns {string} Uma string contendo o resultado em formato HTML.
+             */
+            if (numero % 2 === 0) {
+                return `<p>O número ${numero} é <b>par</b>.</p>`;
+            } else {
+                return `<p>O número ${numero} é <b>ímpar</b>.</p>`;
+            }
+        }
+
+        function exibirResultado() {
+            // Pega o valor do input do HTML
+            const numeroInput = document.getElementById("numeroInput").value;
+            const numero = parseInt(numeroInput);
+
+            // Seleciona o elemento div onde o resultado será exibido
+            const resultadoDiv = document.getElementById("resultado");
+
+            // Verifica se a entrada é um número válido
+            if (isNaN(numero)) {
+                resultadoDiv.innerHTML = `<p style="color: red;">Por favor, digite um número inteiro válido.</p>`;
+            } else {
+                // Chama a função e exibe o resultado no HTML
+                resultadoDiv.innerHTML = verificarParOuImpar(numero);
+            }
+        }
+    </script>
+
+</body>
+</html>

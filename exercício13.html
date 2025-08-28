@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulando Input - JS</title>
+    <script>
+
+        function selecionarCaracter(){
+            var caracter = document.getElementById('entrada').value
+            if(caracter == '0' || caracter == '1' || caracter == '2' || 
+            caracter == '3' || caracter == '4' || caracter == '5' || caracter == '6' || 
+            caracter == '7' || caracter == '8' || caracter == '9'){
+                var caracter = document.getElementById('numeros').value
+                var caracter = document.getElementById('entrada').value = null;
+            }else{
+                var caracter = document.getElementById('letras').value
+                var caracter = document.getElementById('entrada').value = null;
+            }
+
+            }
+
+    </script>
+</head>
+<body>
+    <label>Entrada:</label>
+    <input type="text" id="entrada" onkeyup="selecionarCaracter()" 
+    placeholder="Digite o Caracter">
+    <hr>
+    <label>Saída Letra:</label>
+    <input type="text" id="letras"  disable="dissable">
+    <laber>Saída Número:</laber>
+    <input type="text" id="saida" disabled="disabled">
+   
+</body>
+</html>

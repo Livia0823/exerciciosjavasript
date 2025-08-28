@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contrato Estudantil</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      display: flex;
+      justify-content: center;
+      margin-top: 40px;
+    }
+    .container {
+      background-color: #b3b3b3;
+      padding: 20px;
+      border-radius: 8px;
+      max-width: 900px;
+      width: 100%;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    input[type="text"], textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 5px 0;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+      font-size: 14px;
+    }
+    .row {
+      display: flex;
+      gap: 10px;
+    }
+    .row > div {
+      flex: 1;
+    }
+    button {
+      background-color: #666;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      font-size: 14px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    button:hover {
+      background-color: #444;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>CONTRATO ESTUDANTIL</h2>
+
+    <div class="row">
+      <div><input type="text" placeholder="Nome" id="nome"></div>
+      <div><input type="text" placeholder="Sobrenome" id="sobrenome"></div>
+    </div>
+
+    <div class="row">
+      <div style="flex: 2;"><input type="text" placeholder="Cidade" id="cidade"></div>
+      <div><input type="text" placeholder="Estado" id="estado"></div>
+      <div><input type="text" placeholder="CEP" id="cep"></div>
+    </div>
+
+    <label>Aceito Contrato:
+      <input type="radio" name="aceito" value="sim"> Sim
+    </label>
+
+    <button onclick="enviarFormulario()">Enviar</button>
+
+    <label>Contrato</label>
+    <textarea rows="4" id="contrato"></textarea>
+  </div>
+
+  <script>
+    function enviarFormulario() {
+      let nome = document.getElementById("nome").value;
+      let sobrenome = document.getElementById("sobrenome").value;
+      let cidade = document.getElementById("cidade").value;
+      let estado = document.getElementById("estado").value;
+      let cep = document.getElementById("cep").value;
+      let aceito = document.querySelector('input[name="aceito"]:checked');
+
+      if (!nome || !sobrenome || !cidade || !estado || !cep) {
+        alert("Preencha todos os campos!");
+        return;
+      }
+      if (!aceito) {
+        alert("Você deve aceitar o contrato!");
+        return;
+      }
+
+      alert(`Formulário enviado com sucesso!\nNome: ${nome} ${sobrenome}\nCidade: ${cidade} - ${estado}\nCEP: ${cep}`);
+    }
+  </script>
+</body>
+</html>

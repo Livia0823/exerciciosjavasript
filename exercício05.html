@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var parametro = prompt('Digite a quantidade de dias');
+
+        switch (parametro) {
+            case '28':
+                document.write('Fevereiro');
+                break;
+            case '31':
+                document.write('Janeiro, Março, Maio, Julho, Agosto, Outubro, Dezembro ');
+                break;
+            case '30':
+                document.write('Abril, Junho, Setembro, Novembro');
+            default:
+                document.write('Erro');
+        }
+    </script>
+
+
+</body>
+</html>
